@@ -1,0 +1,28 @@
+{#
+/**
+ * commerce-toolbox plugin for Craft CMS
+ *
+ * commerce-toolbox_AlmostOutOfStockProductsWidget Settings
+ *
+ * @author    BBM Buunk
+ * @copyright Copyright (c) 2016 BBM Buunk
+ * @link      https://github.com/BBMBuunk
+ * @package   Commercetoolbox
+ * @since     0.0.1
+ */
+#}
+
+{% import "_includes/forms" as forms %}
+
+{#{% includeCssResource "commercetoolbox/css/Commercetoolbox_Style.css" %}#}
+{#{% includeJsResource "commercetoolbox/js/Commercetoolbox_Script.js" %}#}
+
+{{ forms.textField({
+label: "product stock limit"|t,
+instructions: "Everything under this number will be displayed by the plugin, limited to 10 products at a time"|t,
+id: 'limit',
+name: 'limit',
+required: true,
+values: settings.limit,
+errors: settings.getErrors('limit')
+}) }}

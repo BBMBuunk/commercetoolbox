@@ -1,0 +1,14 @@
+{
+	"name": "BBMBuunk/commercetoolbox",
+	"description": "Widgets and tools to extend Craft Commerce",
+	"type": "craft-plugin",
+	"authors": [
+		{
+			"name": "BBM Buunk",
+			"homepage": "https://github.com/BBMBuunk"
+		}
+	],
+	"require": {
+		"composer/installers": "~1.0"
+	}
+}

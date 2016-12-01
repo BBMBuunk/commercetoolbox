@@ -1,0 +1,73 @@
+{#
+/**
+ * commerce-toolbox plugin for Craft CMS
+ *
+ * commerce-toolbox_AlmostOutOfStockProductsWidget Body
+ *
+ * @author    BBM Buunk
+ * @copyright Copyright (c) 2016 BBM Buunk
+ * @link      https://github.com/BBMBuunk
+ * @package   Commercetoolbox
+ * @since     0.0.1
+ */
+#}
+<canvas id="myChart" width="400" height="400"></canvas>
+<script>
+    function drawChart() {
+        try {
+            var ctx = document.getElementById("myChart");
+
+            var myChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: [{% for item in lowStockProductsThreshold %}"{{ item.sku }}"{% if not loop.last %},{% endif %}{% endfor %}],
+                    datasets: [{
+                        label: 'Products in stock',
+                        data: [{% for item in lowStockProductsThreshold %}"{{ item.stock }}"{% if not loop.last %},{% endif %}{% endfor %}],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero:true
+                            }
+                        }]
+                    }
+                }
+            });
+        }
+        catch(error) {
+            document.getElementById("myChart").innerHTML = error.message;
+        }
+    }
+
+    document.onreadystatechange = function () {
+        if (document.readyState === 'complete') {
+            drawChart();
+            document.querySelector('.amcommercetools_almostoutofstockproducts .submit').addEventListener('click', function() {
+                setTimeout(function() {
+                    drawChart();
+                }, 1000);
+            }, false);
+        }
+    };
+
+</script>
