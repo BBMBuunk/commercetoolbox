@@ -41,3 +41,6 @@ Some things to do, and ideas for potential features:
 * Initial release
 
 Brought to you by [BBM Buunk](https://github.com/BBMBuunk)
+
+*Codacy quality check
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4aa85f592acb4211add3c1befe039535)](https://www.codacy.com/app/bbmbuunk_2/commercetoolbox?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=BBMBuunk/commercetoolbox&amp;utm_campaign=Badge_Grade)
