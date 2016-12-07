@@ -40,6 +40,8 @@ class CommercetoolboxPlugin extends BasePlugin
      */
     public function init()
     {
+        craft()->templates->includeJsResource('commercetoolbox/js/widgets/Chart.js');
+        craft()->templates->includeJsResource('commercetoolbox/js/widgets/Commercetoolbox_InitChart.js');
     }
 
     /**

@@ -14,13 +14,8 @@
 namespace Craft;
 class Commercetoolbox_HighValueCustomerWidget extends BaseWidget
 {
-    /**
-     * Initialize Chart.js so it can be used in the widget
-     */
     public function init()
     {
-        // Include our Javascript
-        craft()->templates->includeJsResource('commercetoolbox/js/widgets/Chart.js');
     }
     /**
      * Returns the name of the widget name.

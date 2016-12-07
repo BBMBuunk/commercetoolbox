@@ -43,6 +43,7 @@ class CommercetoolboxVariable
 
     /**
      *  Returning customers with many orders
+     *  From any Twig template, call it like this:
      * {{ craft.commercetoolbox.highValueCustomer }}
      * */
     public function highValueCustomer() {

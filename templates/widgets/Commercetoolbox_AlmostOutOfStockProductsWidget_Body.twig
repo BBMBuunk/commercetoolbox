@@ -22,7 +22,7 @@
                 data: {
                     labels: [{% for item in lowStockProductsThreshold %}"{{ item.sku }}"{% if not loop.last %},{% endif %}{% endfor %}],
                     datasets: [{
-                        label: 'Products in stock',
+                        label: '# Products in stock',
                         data: [{% for item in lowStockProductsThreshold %}"{{ item.stock }}"{% if not loop.last %},{% endif %}{% endfor %}],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -58,16 +58,4 @@
             document.getElementById("myChart").innerHTML = error.message;
         }
     }
-
-    document.onreadystatechange = function () {
-        if (document.readyState === 'complete') {
-            drawChart();
-            document.querySelector('.amcommercetools_almostoutofstockproducts .submit').addEventListener('click', function() {
-                setTimeout(function() {
-                    drawChart();
-                }, 1000);
-            }, false);
-        }
-    };
-
 </script>

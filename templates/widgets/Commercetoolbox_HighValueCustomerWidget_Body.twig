@@ -24,7 +24,7 @@
                 data: {
                     labels: [{% for item in highValueCustomer %}"{{ item.email }}"{% if not loop.last %},{% endif %}{% endfor %}],
                     datasets: [{
-                        label: 'Products in stock',
+                        label: '# Number of orders',
                         data: [{% for item in highValueCustomer %}"{{ item.coc }}"{% if not loop.last %},{% endif %}{% endfor %}],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
@@ -60,11 +60,4 @@
             document.getElementById("myValueCustomerChart").innerHTML = error.message;
         }
     }
-
-    document.onreadystatechange = function () {
-        if (document.readyState === 'complete') {
-            drawChartTwo();
-        }
-    };
-
 </script>
