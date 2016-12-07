@@ -40,4 +40,12 @@ class CommercetoolboxVariable
          * */
         return craft()->commerceToolBox_almostOutOfStockProducts->getLowStockProducts($quantity);
     }
+
+    /**
+     *  Returning customers with many orders
+     * {{ craft.commercetoolbox.highValueCustomer }}
+     * */
+    public function highValueCustomer() {
+        return craft()->commercetoolbox_customer->getHighValueCustomers();
+    }
 }
